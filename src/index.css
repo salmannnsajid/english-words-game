@@ -32,6 +32,9 @@ body {
 .guessedWord {
   max-width: 100px;
   border-radius: var(--rounded);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .matchLetter {

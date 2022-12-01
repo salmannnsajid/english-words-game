@@ -1,6 +1,6 @@
 import { useGameStore } from "../store/store";
 
-export const SubmitButton = ({ setAllWordsGuessed }) => {
+export const SubmitButton = () => {
   const {
     error,
     matchWords,
@@ -15,11 +15,9 @@ export const SubmitButton = ({ setAllWordsGuessed }) => {
 
   const handleClickMergeLetters = () => {
     let lettersValues = [];
-    console.log({ selectedLetters });
     selectedLetters.forEach((letter) => lettersValues.push(letter.value));
-    console.log({ lettersValues });
     let formedWord = lettersValues.join("");
-    console.log({ formedWord });
+
     if (matchWords.includes(formedWord)) {
       if (guessedWords.includes(formedWord)) {
         setSelectedLetters([]);

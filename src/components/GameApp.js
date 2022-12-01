@@ -51,6 +51,7 @@ export const GameApp = () => {
     setClueCounter(3);
     setClueWord(null);
     setError(null);
+    setAllWordsGuessed(false);
 
     const randInt = Math.floor(Math.random() * gameLetters.length);
     let objectLetters = [];
@@ -72,12 +73,19 @@ export const GameApp = () => {
     setMatch();
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    // let totalLength =
+    if (guessedWords && guessedWords.length && guessedWords.length > 5) {
+      setAllWordsGuessed(true);
+    }
+  }, [guessedWords]);
   return (
     <>
       <main className="flex flex-col pb-3">
         <div className="flex flex-col items-center w-full pb-6 text-white">
           <h2 className="text-2xl font-bold">English Words Minigame</h2>
-          <h3 className="text-base">by Salman Sajid</h3>
+          <h3 className="text-base">by Moon</h3>
           <ul className="flex">
             <li className="mr-2">
               <a
@@ -93,18 +101,7 @@ export const GameApp = () => {
         </div>
 
         {allWordsGuessed ? (
-          <>
-            <div className="mb-3 self-center">
-              <button
-                onClick={setMatch}
-                className="p-2 bg-green-500 text-white rounded"
-              >
-                <i className="bi bi-plus" />
-                Play new match
-              </button>
-            </div>
-            <StatsChart />
-          </>
+          <StatsChart setMatch={setMatch} />
         ) : (
           <>
             <div className="statsSection flex flex-col">
@@ -135,7 +132,7 @@ export const GameApp = () => {
               <div className="sectionB flex flex-col justify-around">
                 <FormingWordLettersRecipient />
                 <MatchLettersRecipient />
-                <SubmitButton setAllWordsGuessed={setAllWordsGuessed} />
+                <SubmitButton />
               </div>
             </div>
 

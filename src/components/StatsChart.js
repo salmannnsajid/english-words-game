@@ -1,10 +1,19 @@
 import { useGameStore } from "../store/store";
 
-export const StatsChart = () => {
+export const StatsChart = ({ setMatch }) => {
   const { matchWords, clueCounter, guessedWords, guessingAttempts } =
     useGameStore();
   return (
     <>
+      <div className="mb-3 self-center">
+        <button
+          onClick={setMatch}
+          className="p-2 bg-green-500 text-white rounded"
+        >
+          <i className="bi bi-plus" />
+          Play new match
+        </button>
+      </div>
       <div className="flex flex-col bg-white p-3 rounded border-4 border-blue-400">
         <h1 className="mb-3 text-xl font-bold text-blue-900 text-center">
           Match Stats
