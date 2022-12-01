@@ -11,7 +11,6 @@ import { HowToPlay } from "./HowToPlay";
 
 export const GameApp = () => {
   const [revealHelp, setRevealHelp] = useState(false);
-  const [allWordsGuessed, setAllWordsGuessed] = useState(false);
 
   const {
     clueWord,
@@ -51,7 +50,6 @@ export const GameApp = () => {
     setClueCounter(3);
     setClueWord(null);
     setError(null);
-    setAllWordsGuessed(false);
 
     const randInt = Math.floor(Math.random() * gameLetters.length);
     let objectLetters = [];
@@ -74,12 +72,6 @@ export const GameApp = () => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    // let totalLength =
-    if (guessedWords && guessedWords.length && guessedWords.length > 5) {
-      setAllWordsGuessed(true);
-    }
-  }, [guessedWords]);
   return (
     <>
       <main className="flex flex-col pb-3">
@@ -100,7 +92,7 @@ export const GameApp = () => {
           </ul>
         </div>
 
-        {allWordsGuessed ? (
+        {guessedWords.length === matchWords.length ? (
           <StatsChart setMatch={setMatch} />
         ) : (
           <>

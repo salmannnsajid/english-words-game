@@ -15,7 +15,6 @@ export const gameWords = [
     "Slime",
     "Smile",
     "Miles",
-    "Lie",
     "Slim",
     "Semi",
     "Isle",
@@ -25,6 +24,7 @@ export const gameWords = [
     "Mess",
     "Mile",
     "Miss",
+    "Lie",
   ],
   [
     "Grade",
