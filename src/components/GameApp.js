@@ -29,14 +29,12 @@ export const GameApp = () => {
 
   const handleClueBtn = () => {
     if (clueCounter > 0) {
-      let randInt = Math.floor(Math.random() * matchWords.length);
+      let remainingWords = matchWords.filter(
+        (word) => guessedWords.indexOf(word) === -1
+      );
+      let randInt = Math.floor(Math.random() * remainingWords.length);
 
-      if (guessedWords.includes(matchWords[randInt])) {
-        randInt -= 1;
-        setClueWord(matchWords[randInt]);
-      } else {
-        setClueWord(matchWords[randInt]);
-      }
+      setClueWord(remainingWords[randInt]);
       setClueCounter(clueCounter - 1);
     }
   };

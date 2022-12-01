@@ -7,4 +7,5 @@ export const gameLetters = [
   ["E", "R", "C", "A", "E", "T"],
   ["C", "R", "S", "E", "U", "O"],
   ["E", "B", "I", "D", "N", "H"],
+  ["R", "P", "S", "O", "N", "E"],
 ];
