@@ -1,5 +1,7 @@
 Welcome to My Awesome Project! This is an open-source project and we welcome contributions from everyone.
 
+You can check this website at: https://english-words-game.vercel.app/
+
 ## How to Contribute
 
 If you have a bug report, feature request, or would like to contribute code to the project, please follow these steps:
