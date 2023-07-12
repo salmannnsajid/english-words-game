@@ -27,7 +27,6 @@ export const gameWords = [
     "Lie",
   ],
   [
-    "Grade",
     "Age",
     "Ear",
     "Egg",
